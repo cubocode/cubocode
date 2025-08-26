@@ -1,0 +1,244 @@
+/* Hero Section - Pantalla completa */
+.hero-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Carrusel de fondo */
+.hero-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 1.5s ease-in-out;
+    opacity: 0;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+/* Overlay oscuro para mejorar legibilidad */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.6) 100%
+    );
+    z-index: 2;
+}
+
+/* Contenido centrado */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero-text {
+    color: white;
+}
+
+.hero-title {
+    margin: 0 0 1rem 0;
+    line-height: 1;
+}
+
+.title-main {
+    display: block;
+    font-size: 5rem;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #1695d8;
+    font-weight: 500;
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin: 0 0 3rem 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-button {
+    background: linear-gradient(135deg, #1695d8 0%, #1e3c72 100%);
+    color: white;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(22, 149, 216, 0.4);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(22, 149, 216, 0.6);
+    background: linear-gradient(135deg, #1e3c72 0%, #1695d8 100%);
+}
+
+.hero-button:active {
+    transform: translateY(-1px);
+}
+
+/* Indicadores del carrusel */
+.carousel-indicators {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 4;
+}
+
+.indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: #1695d8;
+    border-color: #1695d8;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(22, 149, 216, 0.6);
+}
+
+.indicator:hover {
+    background: rgba(22, 149, 216, 0.7);
+    border-color: #1695d8;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .title-main {
+        font-size: 4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .hero-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 100vh;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .title-main {
+        font-size: 3rem;
+        letter-spacing: -1px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-button {
+        padding: 0.9rem 1.8rem;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+    
+    .carousel-indicators {
+        bottom: 30px;
+        gap: 12px;
+    }
+    
+    .indicator {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-main {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+    }
+    
+    .hero-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.8rem;
+    }
+}

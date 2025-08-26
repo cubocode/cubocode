@@ -1,0 +1,176 @@
+.navbar {
+    padding: 1.5rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+
+/* Estado transparente (en home, sin scroll) */
+.navbar.transparent {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.navbar.transparent .nav-link {
+    color: white;
+}
+
+.navbar.transparent .hamburger-line {
+    background-color: white;
+}
+
+/* Estado scrolled (con scroll o en otras páginas) */
+.navbar.scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.navbar.scrolled .nav-link {
+    color: #1695d8;
+}
+
+.navbar.scrolled .hamburger-line {
+    background-color: #1695d8;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    margin-left: 0;
+    justify-content: flex-start;
+}
+
+.logo-image {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.cubo-image {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+    color: #c8c8c8;
+}
+
+.navbar.scrolled .nav-link:hover {
+    color: #1695d8;
+}
+
+/* Hamburger button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger-line.open:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-line.open:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-line.open:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0 1rem;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .navbar-logo {
+        height: 35px;
+        gap: 6px;
+        margin-left: 0;
+    }
+    
+    .navbar-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 80px;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+        margin-left: 0;
+    }
+    
+    .navbar-menu.active {
+        right: 0;
+    }
+    
+    .nav-link {
+        font-size: 1.2rem;
+        padding: 1rem 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #333;
+        color: white;
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+}
