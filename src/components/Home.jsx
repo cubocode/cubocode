@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
-import Footer from './Footer';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 import Contacto from "./Contacto";
 import Nosotros from "./Nosotros";
 import Servicios from "./Servicios";
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const { language } = useLanguage();
+    const t = translations[language];
     
     // Array de imágenes HD/4K para el carrusel
     const images = [
@@ -60,12 +63,12 @@ const Home = () => {
                         <h1 className="hero-title">
                             <span className="title-main">&lt;CUBO/&gt;</span>
                         </h1>
-                        <p className="hero-subtitle">Desarrollo de Aplicaciones Web</p>
+                        <p className="hero-subtitle">{t.home.title}</p>
                         <p className="hero-description">
-                            Construyendo soluciones personalizadas para tu negocio
+                            {t.home.description}
                         </p>
                         <button className="hero-button" onClick={scrollToServicios}>
-                            CONOCENOS ▼
+                            {t.home.button}
                         </button>
                     </div>
                 </div>

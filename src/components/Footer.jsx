@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 
 const Footer = () => {
+    const { language } = useLanguage();
+    const t = translations[language];
+
     return (
         <footer className="footer">
             {/* Sección principal con gradiente */}
@@ -14,13 +19,13 @@ const Footer = () => {
                             <h2>&lt;CUBO/&gt;</h2>
                         </div>
                         <p className="footer-description">
-                            Transformando ideas en soluciones digitales innovadoras
+                            {t.footer.description}
                         </p>
                     </div>
                     
                     {/* Información de contacto */}
                     <div className="footer-contact">
-                        <h3>Contacto</h3>
+                        <h3>{t.footer.contact}</h3>
                         <div className="contact-info">
                             <p>📍 Concepción, Tucumán, Argentina</p>
                             <p>📧 cubo.code.dev@gmail.com</p>
@@ -30,18 +35,18 @@ const Footer = () => {
                     
                     {/* Enlaces rápidos */}
                     <div className="footer-links">
-                        <h3>Enlaces</h3>
+                        <h3>{t.footer.links}</h3>
                         <ul>
-                            <li><Link to="/">Inicio</Link></li>
-                            <li><Link to="/servicios">Servicios</Link></li>
-                            <li><Link to="/nosotros">Nosotros</Link></li>
-                            <li><Link to="/contacto">Contacto</Link></li>
+                            <li><Link to="/">{t.footer.linkItems.home}</Link></li>
+                            <li><Link to="/servicios">{t.footer.linkItems.services}</Link></li>
+                            <li><Link to="/nosotros">{t.footer.linkItems.about}</Link></li>
+                            <li><Link to="/contacto">{t.footer.linkItems.contact}</Link></li>
                         </ul>
                     </div>
                     
                     {/* Redes sociales */}
                     <div className="footer-social">
-                        <h3>Síguenos</h3>
+                        <h3>{t.footer.follow}</h3>
                         <div className="social-icons">
                             <a href="https://www.instagram.com/cubo.code/" className="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -67,10 +72,10 @@ const Footer = () => {
             <div className="footer-bottom">
                 <div className="footer-container">
                     <div className="footer-copyright">
-                        <p>&copy; 2025 <strong>Cubo</strong>. Todos los derechos reservados.</p>
+                        <p>&copy; 2025 <strong>Cubo</strong>. {t.footer.copyright}</p>
                     </div>
                     <div className="footer-made">
-                        <p>Desarrollo web profesional</p>
+                        <p>{t.footer.made}</p>
                     </div>
                 </div>
             </div>

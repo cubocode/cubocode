@@ -1,33 +1,38 @@
 import React from 'react';
 import './Contacto.css';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 
 const Contacto = () => {
+    const { language } = useLanguage();
+    const t = translations[language];
+
     return (
         <section className="contacto-section">
             <div className="contacto-container">
                 <div className="contacto-header">
-                    <h1 className="contacto-titulo">Contacto</h1>
+                    <h1 className="contacto-titulo">{t.contact.title}</h1>
                 </div>
 
                 <div className="contacto-content">
                     <div className="contacto-info">
                         <div className="contacto-item">
-                            <h3 className="contacto-subtitulo">Ubicación</h3>
+                            <h3 className="contacto-subtitulo">{t.contact.location}</h3>
                             <p className="contacto-texto">
-                                Nos encontramos en Concepción, Tucumán Argentina.
+                                {t.contact.locationText}
                             </p>
-                            <p className="contacto-codigo">Código Postal 4146</p>
+                            <p className="contacto-codigo">{t.contact.postalCode}</p>
                         </div>
 
                         <div className="contacto-item">
-                            <h3 className="contacto-subtitulo">Mail</h3>
+                            <h3 className="contacto-subtitulo">{t.contact.email}</h3>
                             <a href="mailto:cubo.code.dev@gmail.com" className="contacto-link">
                                 cubo.code.dev@gmail.com
                             </a>
                         </div>
 
                         <div className="contacto-item">
-                            <h3 className="contacto-subtitulo">Teléfono</h3>
+                            <h3 className="contacto-subtitulo">{t.contact.phone}</h3>
                             <a href="tel:+543863510790" className="contacto-link">
                                 +54 3863 510790
                             </a>

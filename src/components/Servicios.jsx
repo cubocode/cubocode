@@ -1,51 +1,26 @@
 import React from 'react';
 import './Servicios.css';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 
 const Servicios = () => {
-    const servicios = [
-        {
-            id: 1,
-            titulo: "Desarrollo de Aplicaciones Web",
-            descripcion: "Diseñamos y desarrollamos aplicaciones web modernas, escalables y seguras utilizando las últimas tecnologías del ecosistema JavaScript. Nos enfocamos en construir soluciones intuitivas y eficientes que se adaptan a las necesidades de cada cliente.",
-            keywords: ["ReactJS", "Node.js", "Express", "Material-UI", "Bootstrap"],
-            imagen: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        },
-        {
-            id: 2,
-            titulo: "APIs y Back-End Escalable",
-            descripcion: "Creamos APIs robustas y de alto rendimiento para conectar tus aplicaciones con bases de datos, servicios externos o sistemas internos. Garantizamos seguridad, rapidez y flexibilidad en cada implementación.",
-            keywords: ["Node.js", "Express", "REST API", "JWT", "CORS", "Autenticación"],
-            imagen: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        },
-        {
-            id: 3,
-            titulo: "Gestión y Administración de Bases de Datos",
-            descripcion: "Implementamos y administramos bases de datos relacionales y no relacionales, optimizando consultas y asegurando integridad, disponibilidad y seguridad de la información.",
-            keywords: ["PostgreSQL", "MongoDB", "Sequelize", "Mongoose"],
-            imagen: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        },
-        {
-            id: 4,
-            titulo: "Sistemas de Facturación y Control de Stock",
-            descripcion: "Desarrollamos sistemas personalizados para negocios, permitiendo la gestión de inventario, ventas y facturación de manera clara y eficiente. Integramos reportes en tiempo real para una mejor toma de decisiones.",
-            keywords: ["Punto de Venta", "Caja", "Reportes", "Gestión Comercial"],
-            imagen: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        },
-        {
-            id: 5,
-            titulo: "Aplicaciones Móviles Híbridas",
-            descripcion: "Creamos aplicaciones móviles multiplataforma para Android e iOS, utilizando tecnologías que permiten reutilizar código y reducir costos de desarrollo sin perder rendimiento ni calidad.",
-            keywords: ["React Native", "Expo"],
-            imagen: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        },
-        {
-            id: 6,
-            titulo: "Automatización y Soluciones Personalizadas",
-            descripcion: "Construimos software a medida para resolver problemas específicos de empresas y emprendimientos, desde sistemas de reservas hasta plataformas de gestión interna.",
-            keywords: ["Node.js", "Express", "React", "APIs personalizadas"],
-            imagen: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        }
-    ];
+    const { language } = useLanguage();
+    const t = translations[language];
+
+    const servicios = t.services.items.map((item, index) => ({
+        id: index + 1,
+        titulo: item.title,
+        descripcion: item.description,
+        keywords: item.keywords,
+        imagen: [
+            "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        ][index]
+    }));
 
     const tecnologias = [
         { nombre: "JavaScript", icono: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
@@ -64,9 +39,9 @@ const Servicios = () => {
         <section className="servicios-section">
             <div className="servicios-container">
                 <div className="servicios-header">
-                    <h1 className="servicios-titulo">Servicios</h1>
+                    <h1 className="servicios-titulo">{t.services.title}</h1>
                     <p className="servicios-subtitulo">
-                        Soluciones tecnológicas integrales para hacer crecer tu negocio
+                        {t.services.subtitle}
                     </p>
                 </div>
 
@@ -91,7 +66,7 @@ const Servicios = () => {
                 </div>
 
                 <div className="tecnologias-section">
-                    <h2 className="tecnologias-titulo">Tecnologías que Utilizamos</h2>
+                    <h2 className="tecnologias-titulo">{t.services.technologies}</h2>
                     <div className="tecnologias-grid">
                         {tecnologias.map((tecnologia, index) => (
                             <div key={index} className="tecnologia-item">
