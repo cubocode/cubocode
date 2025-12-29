@@ -127,22 +127,28 @@
 }
 
 .footer-links a,
-.footer-links Link {
+.footer-links .footer-link {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     font-size: 0.95rem;
     transition: all 0.3s ease;
     position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    padding: 0;
 }
 
 .footer-links a:hover,
-.footer-links Link:hover {
+.footer-links .footer-link:hover {
     color: white;
     transform: translateX(5px);
 }
 
 .footer-links a::before,
-.footer-links Link::before {
+.footer-links .footer-link::before {
     content: '→';
     position: absolute;
     left: -15px;
@@ -151,7 +157,7 @@
 }
 
 .footer-links a:hover::before,
-.footer-links Link:hover::before {
+.footer-links .footer-link:hover::before {
     opacity: 1;
     left: -20px;
 }
@@ -287,7 +293,7 @@
     }
     
     .footer-links a,
-    .footer-links Link {
+    .footer-links .footer-link {
         font-size: 0.9rem;
     }
     

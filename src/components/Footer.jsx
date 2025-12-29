@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Footer.css';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
@@ -7,6 +6,20 @@ import { translations } from '../translations/translations';
 const Footer = () => {
     const { language } = useLanguage();
     const t = translations[language];
+
+    // Función para hacer scroll suave a una sección
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            const navbarHeight = 80;
+            const sectionPosition = section.offsetTop - navbarHeight;
+            
+            window.scrollTo({
+                top: sectionPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
 
     return (
         <footer className="footer">
@@ -37,10 +50,10 @@ const Footer = () => {
                     <div className="footer-links">
                         <h3>{t.footer.links}</h3>
                         <ul>
-                            <li><Link to="/">{t.footer.linkItems.home}</Link></li>
-                            <li><Link to="/servicios">{t.footer.linkItems.services}</Link></li>
-                            <li><Link to="/nosotros">{t.footer.linkItems.about}</Link></li>
-                            <li><Link to="/contacto">{t.footer.linkItems.contact}</Link></li>
+                            <li><button onClick={() => scrollToSection('home-section')} className="footer-link">{t.footer.linkItems.home}</button></li>
+                            <li><button onClick={() => scrollToSection('servicios-section')} className="footer-link">{t.footer.linkItems.services}</button></li>
+                            <li><button onClick={() => scrollToSection('nosotros-section')} className="footer-link">{t.footer.linkItems.about}</button></li>
+                            <li><button onClick={() => scrollToSection('contacto-section')} className="footer-link">{t.footer.linkItems.contact}</button></li>
                         </ul>
                     </div>
                     

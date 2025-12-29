@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -45,4 +49,85 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+/* Animaciones de Slide para las secciones */
+.slide-section {
+  position: relative;
+  opacity: 0;
+  transform: translateY(200px);
+  transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+  overflow: visible;
+}
+
+/* Cuando la sección entra en vista, activar animación */
+.slide-section.visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+/* Efecto de slide desde abajo para Servicios */
+#servicios-section.slide-section {
+  transform: translateY(200px);
+}
+
+#servicios-section.slide-section.visible {
+  transform: translateY(0);
+  animation: slideUpEffect 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Efecto de slide desde la izquierda para Nosotros */
+#nosotros-section.slide-section {
+  transform: translateX(-200px);
+}
+
+#nosotros-section.slide-section.visible {
+  transform: translateX(0);
+  animation: slideLeftEffect 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Efecto de slide desde la derecha para Contacto */
+#contacto-section.slide-section {
+  transform: translateX(200px);
+}
+
+#contacto-section.slide-section.visible {
+  transform: translateX(0);
+  animation: slideRightEffect 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Keyframes para efectos de slide más pronunciados */
+@keyframes slideUpEffect {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeftEffect {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRightEffect {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

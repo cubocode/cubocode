@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
@@ -8,7 +7,7 @@ import logo from '../assets/LogoCubo.png';
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const location = useLocation();
+    const [activeSection, setActiveSection] = useState('home-section');
     const { language, changeLanguage } = useLanguage();
     
     const t = translations[language];
@@ -21,18 +20,47 @@ const Navbar = () => {
         setIsMenuOpen(false);
     };
 
-    // Detectar scroll y ubicación
+    // Función para hacer scroll suave a una sección con efecto slide
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            const navbarHeight = 80; // Altura aproximada de la navbar
+            const sectionPosition = section.offsetTop - navbarHeight;
+            
+            // Agregar clase visible antes de hacer scroll para activar animación
+            section.classList.add('visible');
+            
+            window.scrollTo({
+                top: sectionPosition,
+                behavior: 'smooth'
+            });
+            closeMenu();
+        }
+    };
+
+    // Detectar scroll y sección activa
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
-            const isHomePage = location.pathname === '/';
+            const navbarHeight = 80;
             
-            if (isHomePage) {
-                // En home, transparente hasta 100px, luego blanco
-                setIsScrolled(scrollPosition > 100);
-            } else {
-                // En otras páginas, siempre blanco
-                setIsScrolled(true);
+            // Cambiar estilo de navbar según scroll
+            setIsScrolled(scrollPosition > 100);
+
+            // Detectar qué sección está visible
+            const sections = ['home-section', 'servicios-section', 'nosotros-section', 'contacto-section'];
+            
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = document.getElementById(sections[i]);
+                if (section) {
+                    const sectionTop = section.offsetTop - navbarHeight - 100; // Offset para activar antes
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        setActiveSection(sections[i]);
+                        break;
+                    }
+                }
             }
         };
 
@@ -40,12 +68,12 @@ const Navbar = () => {
         handleScroll(); // Ejecutar una vez al cargar
 
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [location.pathname]);
+    }, []);
 
     return (
         <nav className={`navbar ${isScrolled ? 'scrolled' : 'transparent'}`}>
             <div className="navbar-container">
-                <div className="navbar-logo">
+                <div className="navbar-logo" onClick={() => scrollToSection('home-section')} style={{ cursor: 'pointer' }}>
                     <img src={logo} alt="Cubo Code" className="logo-image" />
                    {/* <img src={cubo} alt="Cubo Code" className="cubo-image" /> */}
                 </div>
@@ -57,10 +85,30 @@ const Navbar = () => {
                 </div>
 
                 <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
-                    <Link to="/" className="nav-link" onClick={closeMenu}>{t.navbar.home}</Link>
-                    <Link to="/servicios" className="nav-link" onClick={closeMenu}>{t.navbar.services}</Link>
-                    <Link to="/nosotros" className="nav-link" onClick={closeMenu}>{t.navbar.about}</Link>
-                    <Link to="/contacto" className="nav-link" onClick={closeMenu}>{t.navbar.contact}</Link>
+                    <button 
+                        className={`nav-link ${activeSection === 'home-section' ? 'active' : ''}`}
+                        onClick={() => scrollToSection('home-section')}
+                    >
+                        {t.navbar.home}
+                    </button>
+                    <button 
+                        className={`nav-link ${activeSection === 'servicios-section' ? 'active' : ''}`}
+                        onClick={() => scrollToSection('servicios-section')}
+                    >
+                        {t.navbar.services}
+                    </button>
+                    <button 
+                        className={`nav-link ${activeSection === 'nosotros-section' ? 'active' : ''}`}
+                        onClick={() => scrollToSection('nosotros-section')}
+                    >
+                        {t.navbar.about}
+                    </button>
+                    <button 
+                        className={`nav-link ${activeSection === 'contacto-section' ? 'active' : ''}`}
+                        onClick={() => scrollToSection('contacto-section')}
+                    >
+                        {t.navbar.contact}
+                    </button>
                     
                     {/* Selector de idioma */}
                     <div className="language-selector">

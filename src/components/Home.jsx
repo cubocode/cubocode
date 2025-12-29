@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './Home.css';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
-import Contacto from "./Contacto";
-import Nosotros from "./Nosotros";
-import Servicios from "./Servicios";
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,9 +27,15 @@ const Home = () => {
     const scrollToServicios = () => {
         const serviciosSection = document.getElementById('servicios-section');
         if (serviciosSection) {
-            serviciosSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const navbarHeight = 80;
+            const sectionPosition = serviciosSection.offsetTop - navbarHeight;
+            
+            // Activar animación antes de hacer scroll
+            serviciosSection.classList.add('visible');
+            
+            window.scrollTo({
+                top: sectionPosition,
+                behavior: 'smooth'
             });
         }
     };
@@ -84,12 +87,6 @@ const Home = () => {
                     ))}
                 </div>
             </section>
-
-            <div id="servicios-section">
-                <Servicios />
-            </div>
-            <Nosotros />
-            <Contacto />
         </div>
     )
 }
