@@ -10,6 +10,7 @@ const DEVICON = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons';
 const tecnologias = [
     { nombre: 'JavaScript', icono: `${DEVICON}/javascript/javascript-original.svg` },
     { nombre: 'React', icono: `${DEVICON}/react/react-original.svg` },
+    { nombre: 'React Native', icono: `${DEVICON}/react/react-original.svg` },
     { nombre: 'Node.js', icono: `${DEVICON}/nodejs/nodejs-original.svg` },
     { nombre: 'Express', icono: `${DEVICON}/express/express-original.svg` },
     { nombre: 'PostgreSQL', icono: `${DEVICON}/postgresql/postgresql-original.svg` },
