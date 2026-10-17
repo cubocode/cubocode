@@ -2,61 +2,56 @@ import React from 'react';
 import './Nosotros.css';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
+import Icon from './Icon';
+
+const ICONOS_VALORES = ['target', 'award', 'users'];
 
 const Nosotros = () => {
     const { language } = useLanguage();
     const t = translations[language];
 
     return (
-        <section className="nosotros-section">
-            <div className="nosotros-container">
-                <div className="nosotros-header">
-                    <h1 className="nosotros-titulo">{t.about.title}</h1>
-                </div>
-
-                <div className="nosotros-content">
-                    <div className="nosotros-texto">
+        <section id="nosotros" className="section">
+            <div className="container">
+                <div className="nosotros-top">
+                    <div className="nosotros-intro reveal">
+                        <span className="eyebrow">{t.about.eyebrow}</span>
+                        <h2 className="section-title">{t.about.title}</h2>
                         {t.about.paragraphs.map((paragraph, index) => (
-                            <div key={index} className="nosotros-parrafo">
-                                <p>
-                                    {paragraph.includes('Cubo') ? (
-                                        <>
-                                            {paragraph.split('Cubo').map((part, i) => (
-                                                <React.Fragment key={i}>
-                                                    {part}
-                                                    {i < paragraph.split('Cubo').length - 1 && <strong>Cubo</strong>}
-                                                </React.Fragment>
-                                            ))}
-                                        </>
-                                    ) : (
-                                        paragraph
-                                    )}
-                                </p>
-                            </div>
+                            <p key={index} className="nosotros-parrafo">{paragraph}</p>
                         ))}
                     </div>
 
-                    <div className="nosotros-imagen">
-                        <img 
-                            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                            alt="Equipo de desarrollo trabajando" 
-                        />
-                        <div className="nosotros-overlay"></div>
+                    <div className="nosotros-valores">
+                        {t.about.values.map((value, index) => (
+                            <div key={index} className="valor-item reveal">
+                                <div className="valor-icono">
+                                    <Icon name={ICONOS_VALORES[index]} size={20} />
+                                </div>
+                                <div>
+                                    <h3>{value.title}</h3>
+                                    <p>{value.description}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
-                <div className="nosotros-valores">
-                    {t.about.values.map((value, index) => (
-                        <div key={index} className="valor-item">
-                            <div className="valor-icono">{['🎯', '⭐', '🤝'][index]}</div>
-                            <h3>{value.title}</h3>
-                            <p>{value.description}</p>
-                        </div>
-                    ))}
+                <div className="proceso reveal">
+                    <h3 className="proceso-titulo">{t.about.processTitle}</h3>
+                    <ol className="proceso-lista">
+                        {t.about.process.map((step, index) => (
+                            <li key={index} className="proceso-paso">
+                                <span className="proceso-numero">{String(index + 1).padStart(2, '0')}</span>
+                                <h4>{step.title}</h4>
+                                <p>{step.description}</p>
+                            </li>
+                        ))}
+                    </ol>
                 </div>
             </div>
         </section>
     );
 };
 
-export default Nosotros;        
+export default Nosotros;

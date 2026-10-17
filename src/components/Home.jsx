@@ -1,94 +1,75 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Home.css';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
+import { scrollToSection } from '../constants';
+import Brand from './Brand';
+import Icon from './Icon';
 
 const Home = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
     const { language } = useLanguage();
     const t = translations[language];
-    
-    // Array de imágenes HD/4K para el carrusel
-    const images = [
-        'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-        'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-        'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'
+
+    const codeLines = [
+        <><span className="c-key">const</span> proyecto = <span className="c-key">new</span> <span className="c-fn">Cubo</span>({'{'}</>,
+        <>{'  '}cliente: <span className="c-str">'{t.home.code.client}'</span>,</>,
+        <>{'  '}web: <span className="c-bool">true</span>,</>,
+        <>{'  '}mobile: <span className="c-bool">true</span>,</>,
+        <>{'  '}stack: [<span className="c-str">'React'</span>, <span className="c-str">'Node.js'</span>],</>,
+        <>{'});'}</>,
+        <>{' '}</>,
+        <><span className="c-key">await</span> proyecto.<span className="c-fn">lanzar</span>();</>,
+        <><span className="c-comment">{'// ✓ '}{t.home.code.comment}</span></>
     ];
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
-        }, 4000); // Cambia cada 4 segundos
-
-        return () => clearInterval(interval);
-    }, [images.length]);
-
-    const scrollToServicios = () => {
-        const serviciosSection = document.getElementById('servicios-section');
-        if (serviciosSection) {
-            const navbarHeight = 80;
-            const sectionPosition = serviciosSection.offsetTop - navbarHeight;
-            
-            // Activar animación antes de hacer scroll
-            serviciosSection.classList.add('visible');
-            
-            window.scrollTo({
-                top: sectionPosition,
-                behavior: 'smooth'
-            });
-        }
-    };
-
     return (
-        <div>
-            {/* Hero Section */}
-            <section className="hero-section">
-                {/* Carrusel de fondo */}
-                <div className="hero-carousel">
-                    {images.map((image, index) => (
-                        <div
-                            key={index}
-                            className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
-                            style={{
-                                backgroundImage: `url(${image})`
-                            }}
-                        />
-                    ))}
-                </div>
-                
-                {/* Overlay oscuro */}
-                <div className="hero-overlay"></div>
-                
-                {/* Contenido centrado */}
-                <div className="hero-content">
-                    <div className="hero-text">
-                        <h1 className="hero-title">
-                            <span className="title-main">&lt;CUBO/&gt;</span>
-                        </h1>
-                        <p className="hero-subtitle">{t.home.title}</p>
-                        <p className="hero-description">
-                            {t.home.description}
-                        </p>
-                        <button className="hero-button" onClick={scrollToServicios}>
-                            {t.home.button}
+        <section id="inicio" className="hero">
+            <div className="hero-grid" aria-hidden="true"></div>
+            <div className="hero-glow" aria-hidden="true"></div>
+
+            <div className="container hero-inner">
+                <div className="hero-text">
+                    <Brand className="hero-brand" />
+                    <span className="hero-eyebrow">{t.home.eyebrow}</span>
+                    <h1 className="hero-title">{t.home.title}</h1>
+                    <p className="hero-description">{t.home.description}</p>
+
+                    <div className="hero-actions">
+                        <button className="btn btn-primary" onClick={() => scrollToSection('contacto')}>
+                            {t.home.primary}
+                            <Icon name="arrowRight" size={18} />
+                        </button>
+                        <button className="btn btn-ghost" onClick={() => scrollToSection('servicios')}>
+                            {t.home.secondary}
                         </button>
                     </div>
+
+                    <ul className="hero-highlights">
+                        {t.home.highlights.map((item) => (
+                            <li key={item}>
+                                <Icon name="check" size={16} />
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-                
-                {/* Indicadores del carrusel */}
-                <div className="carousel-indicators">
-                    {images.map((_, index) => (
-                        <button
-                            key={index}
-                            className={`indicator ${index === currentSlide ? 'active' : ''}`}
-                            onClick={() => setCurrentSlide(index)}
-                        />
-                    ))}
+
+                <div className="hero-visual" aria-hidden="true">
+                    <div className="code-window">
+                        <div className="code-window-bar">
+                            <span></span><span></span><span></span>
+                            <em>proyecto.js</em>
+                        </div>
+                        <div className="code-window-body">
+                            {codeLines.map((line, i) => (
+                                <div key={i} className="code-line">{line}</div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
-            </section>
-        </div>
-    )
-}
+            </div>
+        </section>
+    );
+};
 
 export default Home;

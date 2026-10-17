@@ -2,53 +2,63 @@ import React from 'react';
 import './Contacto.css';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
+import { CONTACT } from '../constants';
+import Icon from './Icon';
 
 const Contacto = () => {
     const { language } = useLanguage();
     const t = translations[language];
 
+    const items = [
+        { icon: 'mapPin', label: t.contact.location, value: t.contact.locationText },
+        { icon: 'mail', label: t.contact.email, value: CONTACT.email, href: `mailto:${CONTACT.email}` },
+        { icon: 'phone', label: t.contact.phone, value: CONTACT.phone, href: CONTACT.phoneHref }
+    ];
+
     return (
-        <section className="contacto-section">
-            <div className="contacto-container">
-                <div className="contacto-header">
-                    <h1 className="contacto-titulo">{t.contact.title}</h1>
-                </div>
-
-                <div className="contacto-content">
+        <section id="contacto" className="section section-soft">
+            <div className="container">
+                <div className="contacto-card reveal">
                     <div className="contacto-info">
-                        <div className="contacto-item">
-                            <h3 className="contacto-subtitulo">{t.contact.location}</h3>
-                            <p className="contacto-texto">
-                                {t.contact.locationText}
-                            </p>
-                            <p className="contacto-codigo">{t.contact.postalCode}</p>
-                        </div>
+                        <span className="eyebrow">{t.contact.eyebrow}</span>
+                        <h2 className="section-title">{t.contact.title}</h2>
+                        <p className="section-subtitle">{t.contact.subtitle}</p>
 
-                        <div className="contacto-item">
-                            <h3 className="contacto-subtitulo">{t.contact.email}</h3>
-                            <a href="mailto:cubo.code.dev@gmail.com" className="contacto-link">
-                                cubo.code.dev@gmail.com
-                            </a>
-                        </div>
+                        <ul className="contacto-lista">
+                            {items.map((item) => (
+                                <li key={item.icon} className="contacto-item">
+                                    <div className="contacto-icono">
+                                        <Icon name={item.icon} size={20} />
+                                    </div>
+                                    <div>
+                                        <span className="contacto-label">{item.label}</span>
+                                        {item.href ? (
+                                            <a href={item.href} className="contacto-valor contacto-link">{item.value}</a>
+                                        ) : (
+                                            <span className="contacto-valor">{item.value}</span>
+                                        )}
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
 
-                        <div className="contacto-item">
-                            <h3 className="contacto-subtitulo">{t.contact.phone}</h3>
-                            <a href="tel:+543863510790" className="contacto-link">
-                                +54 3863 510790
-                            </a>
-                        </div>
+                        <a
+                            href={CONTACT.whatsapp}
+                            className="btn btn-primary contacto-whatsapp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {t.contact.whatsapp}
+                            <Icon name="arrowRight" size={18} />
+                        </a>
                     </div>
 
                     <div className="contacto-mapa">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.5!2d-65.6!3d-27.3333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9423d9b3b3b3b3b3%3A0x3b3b3b3b3b3b3b3b!2sConcepci%C3%B3n%2C%20Tucum%C3%A1n%2C%20Argentina!5e0!3m2!1ses!2sar!4v1234567890"
-                            width="100%"
-                            height="500"
-                            style={{ border: 0 }}
-                            allowFullScreen=""
+                            src="https://maps.google.com/maps?q=Concepci%C3%B3n,%20Tucum%C3%A1n,%20Argentina&z=13&output=embed"
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
-                            title="Ubicación de Cubo en Concepción, Tucumán"
+                            title={t.contact.mapTitle}
                         ></iframe>
                     </div>
                 </div>
@@ -57,4 +67,4 @@ const Contacto = () => {
     );
 };
 
-export default Contacto;    
+export default Contacto;

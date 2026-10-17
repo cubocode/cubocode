@@ -1,202 +1,260 @@
 export const translations = {
     es: {
-        // Navbar
         navbar: {
-            home: 'Home',
+            home: 'Inicio',
             services: 'Servicios',
+            clients: 'Clientes',
             about: 'Nosotros',
-            contact: 'Contacto'
+            contact: 'Contacto',
+            cta: 'Hablemos'
         },
-        // Home
         home: {
-            title: 'Desarrollo de Aplicaciones Web',
-            description: 'Construyendo soluciones personalizadas para tu negocio',
-            button: 'CONOCENOS ▼'
+            eyebrow: 'Desarrollo de software a medida',
+            title: 'Aplicaciones web y móviles que hacen crecer tu negocio',
+            description: 'Diseñamos, desarrollamos y mantenemos software a medida para comercios, profesionales y empresas. Soluciones claras, escalables y pensadas para el trabajo de todos los días.',
+            primary: 'Solicitar presupuesto',
+            secondary: 'Ver servicios',
+            highlights: ['Desarrollo 100% a medida', 'Acompañamiento y soporte', 'Tecnologías modernas'],
+            code: {
+                client: 'Tu negocio',
+                comment: 'listo para crecer'
+            }
         },
-        // Servicios
         services: {
-            title: 'Servicios',
-            subtitle: 'Soluciones tecnológicas integrales para hacer crecer tu negocio',
-            technologies: 'Tecnologías que Utilizamos',
+            eyebrow: 'Servicios',
+            title: 'Soluciones tecnológicas integrales',
+            subtitle: 'Acompañamos cada proyecto de punta a punta: desde la idea hasta la puesta en marcha y el soporte.',
+            technologies: 'Tecnologías con las que trabajamos',
             items: [
                 {
-                    title: 'Desarrollo de Aplicaciones Web',
-                    description: 'Diseñamos y desarrollamos aplicaciones web modernas, escalables y seguras utilizando las últimas tecnologías del ecosistema JavaScript. Nos enfocamos en construir soluciones intuitivas y eficientes que se adaptan a las necesidades de cada cliente.',
-                    keywords: ['ReactJS', 'Node.js', 'Express', 'Material-UI', 'Bootstrap']
+                    title: 'Aplicaciones web',
+                    description: 'Aplicaciones web modernas, rápidas y seguras, construidas con el ecosistema JavaScript y adaptadas a los procesos de cada cliente.',
+                    keywords: ['React', 'Node.js', 'Express']
                 },
                 {
-                    title: 'APIs y Back-End Escalable',
-                    description: 'Creamos APIs robustas y de alto rendimiento para conectar tus aplicaciones con bases de datos, servicios externos o sistemas internos. Garantizamos seguridad, rapidez y flexibilidad en cada implementación.',
-                    keywords: ['Node.js', 'Express', 'REST API', 'JWT', 'CORS', 'Autenticación']
+                    title: 'APIs y back-end',
+                    description: 'APIs robustas para conectar tus sistemas con bases de datos, servicios externos o aplicaciones internas, con foco en seguridad y rendimiento.',
+                    keywords: ['REST', 'JWT', 'Autenticación']
                 },
                 {
-                    title: 'Gestión y Administración de Bases de Datos',
-                    description: 'Implementamos y administramos bases de datos relacionales y no relacionales, optimizando consultas y asegurando integridad, disponibilidad y seguridad de la información.',
-                    keywords: ['PostgreSQL', 'MongoDB', 'Sequelize', 'Mongoose']
+                    title: 'Bases de datos',
+                    description: 'Diseño, implementación y administración de bases de datos relacionales y no relacionales, garantizando integridad y disponibilidad de la información.',
+                    keywords: ['PostgreSQL', 'MongoDB', 'Sequelize']
                 },
                 {
-                    title: 'Sistemas de Facturación y Control de Stock',
-                    description: 'Desarrollamos sistemas personalizados para negocios, permitiendo la gestión de inventario, ventas y facturación de manera clara y eficiente. Integramos reportes en tiempo real para una mejor toma de decisiones.',
-                    keywords: ['Punto de Venta', 'Caja', 'Reportes', 'Gestión Comercial']
+                    title: 'Ventas y control de stock',
+                    description: 'Sistemas de punto de venta, inventario y facturación con reportes claros para tomar mejores decisiones.',
+                    keywords: ['Punto de venta', 'Caja', 'Reportes']
                 },
                 {
-                    title: 'Aplicaciones Móviles Híbridas',
-                    description: 'Creamos aplicaciones móviles multiplataforma para Android e iOS, utilizando tecnologías que permiten reutilizar código y reducir costos de desarrollo sin perder rendimiento ni calidad.',
+                    title: 'Aplicaciones móviles',
+                    description: 'Apps multiplataforma para Android e iOS a partir de una sola base de código, reduciendo costos sin resignar calidad.',
                     keywords: ['React Native', 'Expo']
                 },
                 {
-                    title: 'Automatización y Soluciones Personalizadas',
-                    description: 'Construimos software a medida para resolver problemas específicos de empresas y emprendimientos, desde sistemas de reservas hasta plataformas de gestión interna.',
-                    keywords: ['Node.js', 'Express', 'React', 'APIs personalizadas']
+                    title: 'Automatización a medida',
+                    description: 'Software para resolver necesidades específicas: sistemas de turnos, gestión interna, trazabilidad de tareas y más.',
+                    keywords: ['Procesos', 'Integraciones', 'APIs']
                 }
             ]
         },
-        // Nosotros
+        clients: {
+            eyebrow: 'Clientes',
+            title: 'Negocios que confían en nosotros',
+            subtitle: 'Algunas de las aplicaciones que desarrollamos y que hoy forman parte del día a día de nuestros clientes.',
+            items: [
+                {
+                    name: 'A&D Minimarket',
+                    sector: 'Comercio minorista',
+                    description: 'Aplicación de ventas y control de stock: punto de venta, gestión de inventario y reportes del negocio.',
+                    tags: ['Ventas', 'Stock', 'Reportes']
+                },
+                {
+                    name: 'Dra. Cecilia Tarulli',
+                    sector: 'Medicina estética',
+                    description: 'Aplicación a medida para la gestión de un centro de medicina estética.',
+                    tags: ['Salud y estética', 'Gestión']
+                },
+                {
+                    name: 'Flick',
+                    sector: 'Productividad',
+                    description: 'Aplicación para el manejo y la trazabilidad de tareas de oficina: asignación, seguimiento y estado de cada tarea.',
+                    tags: ['Tareas', 'Trazabilidad', 'Equipos']
+                },
+                {
+                    name: 'Mar-Her Distribuidora',
+                    sector: 'Distribución',
+                    description: 'Aplicación de gestión a medida para una distribuidora.',
+                    tags: ['Distribución', 'Gestión']
+                }
+            ]
+        },
         about: {
-            title: '¿Quiénes somos?',
+            eyebrow: 'Nosotros',
+            title: 'Transformamos ideas en soluciones digitales',
             paragraphs: [
-                'Cubo es un emprendimiento de desarrollo de software creado para transformar ideas en soluciones digitales innovadoras. Estamos especializados en el diseño y construcción de aplicaciones web y móviles, ofreciendo a nuestros clientes herramientas tecnológicas que se adaptan a sus necesidades y potencian sus objetivos de negocio.',
-                'Nuestro equipo combina creatividad, conocimiento técnico y pasión por la tecnología para brindar soluciones eficientes, escalables y modernas. Creemos en el poder de la innovación como motor de cambio y trabajamos junto a cada cliente para acompañarlos en el camino hacia la transformación digital.',
-                'En Cubo nos define la simplicidad, la calidad y la cercanía: desarrollamos software con una visión clara, cuidando cada detalle para que nuestros proyectos no solo funcionen, sino que también inspiren confianza y crecimiento.'
+                'Cubo es un estudio de desarrollo de software especializado en aplicaciones web y móviles. Creamos herramientas que se adaptan a las necesidades de cada cliente y potencian sus objetivos de negocio.',
+                'Combinamos conocimiento técnico y cercanía para entregar soluciones eficientes, escalables y fáciles de usar, acompañando a cada cliente en su camino hacia la transformación digital.'
             ],
             values: [
-                {
-                    title: 'Simplicidad',
-                    description: 'Desarrollamos soluciones claras y eficientes'
-                },
-                {
-                    title: 'Calidad',
-                    description: 'Cuidamos cada detalle para resultados excepcionales'
-                },
-                {
-                    title: 'Cercanía',
-                    description: 'Trabajamos junto a cada cliente de manera personalizada'
-                }
+                { title: 'Simplicidad', description: 'Soluciones claras y eficientes, sin complejidad innecesaria.' },
+                { title: 'Calidad', description: 'Cuidamos cada detalle para que el software funcione y perdure.' },
+                { title: 'Cercanía', description: 'Trabajamos junto a cada cliente de manera personalizada.' }
+            ],
+            processTitle: 'Cómo trabajamos',
+            process: [
+                { title: 'Relevamiento', description: 'Entendemos tu negocio y definimos juntos el alcance.' },
+                { title: 'Diseño', description: 'Planificamos la solución y la experiencia de uso.' },
+                { title: 'Desarrollo', description: 'Construimos con entregas parciales y feedback continuo.' },
+                { title: 'Puesta en marcha', description: 'Implementamos, capacitamos y damos soporte.' }
             ]
         },
-        // Contacto
         contact: {
-            title: 'Contacto',
+            eyebrow: 'Contacto',
+            title: '¿Tenés un proyecto en mente?',
+            subtitle: 'Contanos tu idea y te respondemos a la brevedad con una propuesta a medida.',
             location: 'Ubicación',
-            locationText: 'Nos encontramos en Concepción, Tucumán Argentina.',
-            postalCode: 'Código Postal 4146',
-            email: 'Mail',
-            phone: 'Teléfono'
+            locationText: 'Concepción, Tucumán, Argentina (CP 4146)',
+            email: 'Email',
+            phone: 'Teléfono',
+            whatsapp: 'Escribinos por WhatsApp',
+            mapTitle: 'Ubicación de Cubo en Concepción, Tucumán'
         },
-        // Footer
         footer: {
-            description: 'Transformando ideas en soluciones digitales innovadoras',
+            description: 'Desarrollo de software a medida para negocios que quieren crecer.',
             contact: 'Contacto',
-            links: 'Enlaces',
-            follow: 'Síguenos',
-            linkItems: {
-                home: 'Inicio',
-                services: 'Servicios',
-                about: 'Nosotros',
-                contact: 'Contacto'
-            },
-            copyright: 'Todos los derechos reservados.',
-            made: 'Desarrollo web profesional'
+            links: 'Secciones',
+            follow: 'Redes',
+            copyright: 'Todos los derechos reservados.'
         }
     },
     en: {
-        // Navbar
         navbar: {
             home: 'Home',
             services: 'Services',
+            clients: 'Clients',
             about: 'About',
-            contact: 'Contact'
+            contact: 'Contact',
+            cta: "Let's talk"
         },
-        // Home
         home: {
-            title: 'Web Application Development',
-            description: 'Building custom solutions for your business',
-            button: 'KNOW US ▼'
+            eyebrow: 'Custom software development',
+            title: 'Web and mobile apps that help your business grow',
+            description: 'We design, build and maintain custom software for retailers, professionals and companies. Clear, scalable solutions built for everyday work.',
+            primary: 'Request a quote',
+            secondary: 'Our services',
+            highlights: ['100% custom development', 'Ongoing support', 'Modern technologies'],
+            code: {
+                client: 'Your business',
+                comment: 'ready to grow'
+            }
         },
-        // Servicios
         services: {
-            title: 'Services',
-            subtitle: 'Comprehensive technological solutions to grow your business',
-            technologies: 'Technologies We Use',
+            eyebrow: 'Services',
+            title: 'End-to-end technology solutions',
+            subtitle: 'We take every project from idea to launch, and keep supporting it afterwards.',
+            technologies: 'Technologies we work with',
             items: [
                 {
-                    title: 'Web Application Development',
-                    description: 'We design and develop modern, scalable and secure web applications using the latest technologies in the JavaScript ecosystem. We focus on building intuitive and efficient solutions that adapt to the needs of each client.',
-                    keywords: ['ReactJS', 'Node.js', 'Express', 'Material-UI', 'Bootstrap']
+                    title: 'Web applications',
+                    description: 'Modern, fast and secure web applications built on the JavaScript ecosystem and tailored to each client’s processes.',
+                    keywords: ['React', 'Node.js', 'Express']
                 },
                 {
-                    title: 'APIs and Scalable Back-End',
-                    description: 'We create robust and high-performance APIs to connect your applications with databases, external services or internal systems. We guarantee security, speed and flexibility in each implementation.',
-                    keywords: ['Node.js', 'Express', 'REST API', 'JWT', 'CORS', 'Authentication']
+                    title: 'APIs and back-end',
+                    description: 'Robust APIs that connect your systems with databases, external services or internal apps, with a focus on security and performance.',
+                    keywords: ['REST', 'JWT', 'Authentication']
                 },
                 {
-                    title: 'Database Management and Administration',
-                    description: 'We implement and manage relational and non-relational databases, optimizing queries and ensuring integrity, availability and security of information.',
-                    keywords: ['PostgreSQL', 'MongoDB', 'Sequelize', 'Mongoose']
+                    title: 'Databases',
+                    description: 'Design, implementation and management of relational and non-relational databases, ensuring data integrity and availability.',
+                    keywords: ['PostgreSQL', 'MongoDB', 'Sequelize']
                 },
                 {
-                    title: 'Billing and Stock Control Systems',
-                    description: 'We develop customized systems for businesses, allowing inventory, sales and billing management in a clear and efficient way. We integrate real-time reports for better decision making.',
-                    keywords: ['Point of Sale', 'Cash Register', 'Reports', 'Commercial Management']
+                    title: 'Sales and inventory',
+                    description: 'Point of sale, inventory and billing systems with clear reports for better decisions.',
+                    keywords: ['Point of sale', 'Cash register', 'Reports']
                 },
                 {
-                    title: 'Hybrid Mobile Applications',
-                    description: 'We create cross-platform mobile applications for Android and iOS, using technologies that allow code reuse and reduce development costs without losing performance or quality.',
+                    title: 'Mobile apps',
+                    description: 'Cross-platform apps for Android and iOS from a single codebase, lowering costs without compromising quality.',
                     keywords: ['React Native', 'Expo']
                 },
                 {
-                    title: 'Automation and Custom Solutions',
-                    description: 'We build custom software to solve specific problems of companies and ventures, from reservation systems to internal management platforms.',
-                    keywords: ['Node.js', 'Express', 'React', 'Custom APIs']
+                    title: 'Custom automation',
+                    description: 'Software for specific needs: booking systems, internal management, task tracking and more.',
+                    keywords: ['Processes', 'Integrations', 'APIs']
                 }
             ]
         },
-        // Nosotros
+        clients: {
+            eyebrow: 'Clients',
+            title: 'Businesses that trust us',
+            subtitle: 'Some of the applications we built that are now part of our clients’ daily operations.',
+            items: [
+                {
+                    name: 'A&D Minimarket',
+                    sector: 'Retail',
+                    description: 'Sales and inventory app: point of sale, stock management and business reports.',
+                    tags: ['Sales', 'Inventory', 'Reports']
+                },
+                {
+                    name: 'Dra. Cecilia Tarulli',
+                    sector: 'Aesthetic medicine',
+                    description: 'Custom management app for an aesthetic medicine clinic.',
+                    tags: ['Health & beauty', 'Management']
+                },
+                {
+                    name: 'Flick',
+                    sector: 'Productivity',
+                    description: 'Office task management and traceability app: assignment, follow-up and status of every task.',
+                    tags: ['Tasks', 'Traceability', 'Teams']
+                },
+                {
+                    name: 'Mar-Her Distribuidora',
+                    sector: 'Distribution',
+                    description: 'Custom management app for a distribution company.',
+                    tags: ['Distribution', 'Management']
+                }
+            ]
+        },
         about: {
-            title: 'Who are we?',
+            eyebrow: 'About us',
+            title: 'We turn ideas into digital solutions',
             paragraphs: [
-                'Cubo is a software development venture created to transform ideas into innovative digital solutions. We specialize in the design and construction of web and mobile applications, offering our clients technological tools that adapt to their needs and enhance their business objectives.',
-                'Our team combines creativity, technical knowledge and passion for technology to provide efficient, scalable and modern solutions. We believe in the power of innovation as a driver of change and work with each client to accompany them on the path to digital transformation.',
-                'At Cubo we are defined by simplicity, quality and closeness: we develop software with a clear vision, taking care of every detail so that our projects not only work, but also inspire confidence and growth.'
+                'Cubo is a software development studio specialized in web and mobile applications. We build tools that adapt to each client’s needs and drive their business goals.',
+                'We combine technical expertise with a close relationship to deliver efficient, scalable and easy-to-use solutions, supporting every client on their digital transformation journey.'
             ],
             values: [
-                {
-                    title: 'Simplicity',
-                    description: 'We develop clear and efficient solutions'
-                },
-                {
-                    title: 'Quality',
-                    description: 'We take care of every detail for exceptional results'
-                },
-                {
-                    title: 'Closeness',
-                    description: 'We work with each client in a personalized way'
-                }
+                { title: 'Simplicity', description: 'Clear, efficient solutions without unnecessary complexity.' },
+                { title: 'Quality', description: 'We care about every detail so the software works and lasts.' },
+                { title: 'Closeness', description: 'We work side by side with each client.' }
+            ],
+            processTitle: 'How we work',
+            process: [
+                { title: 'Discovery', description: 'We learn about your business and define the scope together.' },
+                { title: 'Design', description: 'We plan the solution and the user experience.' },
+                { title: 'Development', description: 'We build in iterations with continuous feedback.' },
+                { title: 'Launch', description: 'We deploy, train your team and provide support.' }
             ]
         },
-        // Contacto
         contact: {
-            title: 'Contact',
+            eyebrow: 'Contact',
+            title: 'Have a project in mind?',
+            subtitle: 'Tell us your idea and we’ll get back to you shortly with a tailored proposal.',
             location: 'Location',
-            locationText: 'We are located in Concepción, Tucumán Argentina.',
-            postalCode: 'Postal Code 4146',
+            locationText: 'Concepción, Tucumán, Argentina (ZIP 4146)',
             email: 'Email',
-            phone: 'Phone'
+            phone: 'Phone',
+            whatsapp: 'Message us on WhatsApp',
+            mapTitle: 'Cubo location in Concepción, Tucumán'
         },
-        // Footer
         footer: {
-            description: 'Transforming ideas into innovative digital solutions',
+            description: 'Custom software development for businesses that want to grow.',
             contact: 'Contact',
-            links: 'Links',
-            follow: 'Follow us',
-            linkItems: {
-                home: 'Home',
-                services: 'Services',
-                about: 'About',
-                contact: 'Contact'
-            },
-            copyright: 'All rights reserved.',
-            made: 'Professional web development'
+            links: 'Sections',
+            follow: 'Social',
+            copyright: 'All rights reserved.'
         }
     }
 };

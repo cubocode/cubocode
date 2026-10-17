@@ -1,10 +1,11 @@
 import React from 'react';
 import './WhatsAppButton.css';
+import { CONTACT } from '../constants';
 
 const WhatsAppButton = () => {
     return (
-        <a 
-            href="https://wa.me/543863510790?text=Hola!%20Quiero%20contratar%20un%20servicio%20de%20desarrollo%20personalizado%20para%20mi%20negocio." 
+        <a
+            href={CONTACT.whatsapp}
             className="whatsapp-button" 
             target="_blank" 
             rel="noopener noreferrer"

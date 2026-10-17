@@ -1,0 +1,16 @@
+.brand {
+    font-family: var(--font-brand);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.brand-name {
+    color: var(--brand);
+}
+
+.brand-bracket {
+    color: var(--brand-gray);
+    font-weight: 500;
+}
