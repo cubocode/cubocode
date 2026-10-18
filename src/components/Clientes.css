@@ -1,7 +1,12 @@
 .clientes-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
+}
+
+.clientes-grid > .cliente-card {
+    flex: 0 0 calc((100% - 48px) / 3);
 }
 
 .cliente-card {
@@ -79,13 +84,13 @@
 }
 
 @media (max-width: 1080px) {
-    .clientes-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .clientes-grid > .cliente-card {
+        flex-basis: calc((100% - 24px) / 2);
     }
 }
 
 @media (max-width: 560px) {
-    .clientes-grid {
-        grid-template-columns: 1fr;
+    .clientes-grid > .cliente-card {
+        flex-basis: 100%;
     }
 }

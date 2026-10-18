@@ -86,6 +86,12 @@ export const translations = {
                     sector: 'Distribución',
                     description: 'Aplicación de gestión a medida para una distribuidora.',
                     tags: ['Distribución', 'Gestión']
+                },
+                {
+                    name: 'Fundación Delta',
+                    sector: 'Educación',
+                    description: 'Aula virtual para los cursos de la fundación: contenidos, seguimiento de alumnos y gestión de inscripciones.',
+                    tags: ['Aula virtual', 'Cursos', 'Educación']
                 }
             ]
         },
@@ -215,6 +221,12 @@ export const translations = {
                     sector: 'Distribution',
                     description: 'Custom management app for a distribution company.',
                     tags: ['Distribution', 'Management']
+                },
+                {
+                    name: 'Fundación Delta',
+                    sector: 'Education',
+                    description: 'Virtual classroom for the foundation\'s courses: content, student tracking and enrollment management.',
+                    tags: ['Virtual classroom', 'Courses', 'Education']
                 }
             ]
         },
