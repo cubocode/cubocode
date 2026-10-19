@@ -15,6 +15,7 @@ const Home = () => {
         <>{'  '}cliente: <span className="c-str">'{t.home.code.client}'</span>,</>,
         <>{'  '}web: <span className="c-bool">true</span>,</>,
         <>{'  '}mobile: <span className="c-bool">true</span>,</>,
+        <>{'  '}desktop: <span className="c-bool">true</span>,</>,
         <>{'  '}stack: [<span className="c-str">'React'</span>, <span className="c-str">'Node.js'</span>],</>,
         <>{'});'}</>,
         <>{' '}</>,

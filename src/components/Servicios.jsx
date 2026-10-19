@@ -4,7 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
 import Icon from './Icon';
 
-const ICONOS = ['code', 'server', 'database', 'cart', 'smartphone', 'zap'];
+const ICONOS = ['code', 'server', 'cart', 'smartphone', 'monitor', 'zap'];
 
 const DEVICON = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons';
 const tecnologias = [
@@ -13,6 +13,9 @@ const tecnologias = [
     { nombre: 'React Native', icono: `${DEVICON}/react/react-original.svg` },
     { nombre: 'Node.js', icono: `${DEVICON}/nodejs/nodejs-original.svg` },
     { nombre: 'Express', icono: `${DEVICON}/express/express-original.svg` },
+    { nombre: 'Electron', icono: `${DEVICON}/electron/electron-original.svg` },
+    { nombre: '.NET', icono: `${DEVICON}/dot-net/dot-net-original.svg` },
+    { nombre: 'Java', icono: `${DEVICON}/java/java-original.svg` },
     { nombre: 'PostgreSQL', icono: `${DEVICON}/postgresql/postgresql-original.svg` },
     { nombre: 'MongoDB', icono: `${DEVICON}/mongodb/mongodb-original.svg` },
     { nombre: 'Bootstrap', icono: `${DEVICON}/bootstrap/bootstrap-original.svg` },

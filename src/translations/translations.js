@@ -10,7 +10,7 @@ export const translations = {
         },
         home: {
             eyebrow: 'Desarrollo de software a medida',
-            title: 'Aplicaciones web y móviles que hacen crecer tu negocio',
+            title: 'Aplicaciones web, móviles y de escritorio que hacen crecer tu negocio',
             description: 'Diseñamos, desarrollamos y mantenemos software a medida para comercios, profesionales y empresas. Soluciones claras, escalables y pensadas para el trabajo de todos los días.',
             primary: 'Solicitar presupuesto',
             secondary: 'Ver servicios',
@@ -32,14 +32,9 @@ export const translations = {
                     keywords: ['React', 'Node.js', 'Express']
                 },
                 {
-                    title: 'APIs y back-end',
-                    description: 'APIs robustas para conectar tus sistemas con bases de datos, servicios externos o aplicaciones internas, con foco en seguridad y rendimiento.',
-                    keywords: ['REST', 'JWT', 'Autenticación']
-                },
-                {
-                    title: 'Bases de datos',
-                    description: 'Diseño, implementación y administración de bases de datos relacionales y no relacionales, garantizando integridad y disponibilidad de la información.',
-                    keywords: ['PostgreSQL', 'MongoDB', 'Sequelize']
+                    title: 'Back-end y bases de datos',
+                    description: 'APIs robustas y bases de datos relacionales y no relacionales para conectar tus sistemas, con foco en seguridad, rendimiento e integridad de la información.',
+                    keywords: ['REST', 'PostgreSQL', 'MongoDB']
                 },
                 {
                     title: 'Ventas y control de stock',
@@ -50,6 +45,11 @@ export const translations = {
                     title: 'Aplicaciones móviles',
                     description: 'Apps multiplataforma para Android e iOS a partir de una sola base de código, reduciendo costos sin resignar calidad.',
                     keywords: ['React Native', 'Expo']
+                },
+                {
+                    title: 'Aplicaciones de escritorio',
+                    description: 'Programas para Windows, macOS y Linux que funcionan en las computadoras del negocio, incluso sin conexión a internet.',
+                    keywords: ['Electron', '.NET', 'Java']
                 },
                 {
                     title: 'Automatización a medida',
@@ -99,7 +99,7 @@ export const translations = {
             eyebrow: 'Nosotros',
             title: 'Transformamos ideas en soluciones digitales',
             paragraphs: [
-                'Cubo es un estudio de desarrollo de software especializado en aplicaciones web y móviles. Creamos herramientas que se adaptan a las necesidades de cada cliente y potencian sus objetivos de negocio.',
+                'Cubo es un estudio de desarrollo de software especializado en aplicaciones web, móviles y de escritorio. Creamos herramientas que se adaptan a las necesidades de cada cliente y potencian sus objetivos de negocio.',
                 'Combinamos conocimiento técnico y cercanía para entregar soluciones eficientes, escalables y fáciles de usar, acompañando a cada cliente en su camino hacia la transformación digital.'
             ],
             values: [
@@ -145,7 +145,7 @@ export const translations = {
         },
         home: {
             eyebrow: 'Custom software development',
-            title: 'Web and mobile apps that help your business grow',
+            title: 'Web, mobile and desktop apps that help your business grow',
             description: 'We design, build and maintain custom software for retailers, professionals and companies. Clear, scalable solutions built for everyday work.',
             primary: 'Request a quote',
             secondary: 'Our services',
@@ -167,14 +167,9 @@ export const translations = {
                     keywords: ['React', 'Node.js', 'Express']
                 },
                 {
-                    title: 'APIs and back-end',
-                    description: 'Robust APIs that connect your systems with databases, external services or internal apps, with a focus on security and performance.',
-                    keywords: ['REST', 'JWT', 'Authentication']
-                },
-                {
-                    title: 'Databases',
-                    description: 'Design, implementation and management of relational and non-relational databases, ensuring data integrity and availability.',
-                    keywords: ['PostgreSQL', 'MongoDB', 'Sequelize']
+                    title: 'Back-end and databases',
+                    description: 'Robust APIs and relational or non-relational databases that connect your systems, with a focus on security, performance and data integrity.',
+                    keywords: ['REST', 'PostgreSQL', 'MongoDB']
                 },
                 {
                     title: 'Sales and inventory',
@@ -185,6 +180,11 @@ export const translations = {
                     title: 'Mobile apps',
                     description: 'Cross-platform apps for Android and iOS from a single codebase, lowering costs without compromising quality.',
                     keywords: ['React Native', 'Expo']
+                },
+                {
+                    title: 'Desktop apps',
+                    description: 'Software for Windows, macOS and Linux that runs on your business computers, even without an internet connection.',
+                    keywords: ['Electron', '.NET', 'Java']
                 },
                 {
                     title: 'Custom automation',
@@ -234,7 +234,7 @@ export const translations = {
             eyebrow: 'About us',
             title: 'We turn ideas into digital solutions',
             paragraphs: [
-                'Cubo is a software development studio specialized in web and mobile applications. We build tools that adapt to each client’s needs and drive their business goals.',
+                'Cubo is a software development studio specialized in web, mobile and desktop applications. We build tools that adapt to each client’s needs and drive their business goals.',
                 'We combine technical expertise with a close relationship to deliver efficient, scalable and easy-to-use solutions, supporting every client on their digital transformation journey.'
             ],
             values: [
