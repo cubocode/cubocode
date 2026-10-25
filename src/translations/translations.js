@@ -92,6 +92,12 @@ export const translations = {
                     sector: 'Educación',
                     description: 'Aula virtual para los cursos de la fundación: contenidos, seguimiento de alumnos y gestión de inscripciones.',
                     tags: ['Aula virtual', 'Cursos', 'Educación']
+                },
+                {
+                    name: 'Omega Equipamientos',
+                    sector: 'Financiera',
+                    description: 'Aplicación para la gestión de cobranzas: seguimiento de cuotas, pagos y saldos de cada cliente.',
+                    tags: ['Cobranzas', 'Cuotas', 'Gestión']
                 }
             ]
         },
@@ -227,6 +233,12 @@ export const translations = {
                     sector: 'Education',
                     description: 'Virtual classroom for the foundation\'s courses: content, student tracking and enrollment management.',
                     tags: ['Virtual classroom', 'Courses', 'Education']
+                },
+                {
+                    name: 'Omega Equipamientos',
+                    sector: 'Finance',
+                    description: 'Collections management app: tracking of installments, payments and balances for each customer.',
+                    tags: ['Collections', 'Installments', 'Management']
                 }
             ]
         },

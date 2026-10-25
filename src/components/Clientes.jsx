@@ -7,9 +7,10 @@ import ct from '../assets/ct.png';
 import flick from '../assets/flick.png';
 import marher from '../assets/marher.png';
 import delta from '../assets/delta.png';
+import omega from '../assets/omega-logo.png';
 
 // Mismo orden que translations.clients.items
-const LOGOS = [aydMinimarket, ct, flick, marher, delta];
+const LOGOS = [aydMinimarket, ct, flick, marher, delta, omega];
 
 const Clientes = () => {
     const { language } = useLanguage();
