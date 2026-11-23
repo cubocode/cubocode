@@ -78,7 +78,7 @@ export const translations = {
                 {
                     name: 'Flick',
                     sector: 'Producto propio · Productividad',
-                    description: 'Software que desarrollamos para nuestra oficina: manejo y trazabilidad de tareas, con asignación, seguimiento y estado de cada una.',
+                    description: 'Software de manejo y trazabilidad de tareas, con asignación, seguimiento y estado de cada una, manejo de licencias del personal, inventario de equipos y agenda.',
                     tags: ['Tareas', 'Trazabilidad', 'Equipos']
                 },
                 {
@@ -231,7 +231,7 @@ export const translations = {
                 {
                     name: 'Flick',
                     sector: 'Own product · Productivity',
-                    description: 'Software we built for our own office: task management and traceability, with assignment, follow-up and status of every task.',
+                    description: 'Task management and traceability software, with assignment, follow-up and status of every task, staff leave management, equipment inventory and calendar.',
                     tags: ['Tasks', 'Traceability', 'Teams']
                 },
                 {
