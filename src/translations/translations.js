@@ -3,7 +3,7 @@ export const translations = {
         navbar: {
             home: 'Inicio',
             services: 'Servicios',
-            clients: 'Clientes',
+            clients: 'Proyectos',
             about: 'Nosotros',
             contact: 'Contacto',
             cta: 'Hablemos'
@@ -156,7 +156,7 @@ export const translations = {
         navbar: {
             home: 'Home',
             services: 'Services',
-            clients: 'Clients',
+            clients: 'Projects',
             about: 'About',
             contact: 'Contact',
             cta: "Let's talk"
