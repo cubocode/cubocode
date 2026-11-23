@@ -59,26 +59,26 @@ export const translations = {
             ]
         },
         clients: {
-            eyebrow: 'Clientes',
-            title: 'Negocios que confían en nosotros',
-            subtitle: 'Algunas de las aplicaciones que desarrollamos y que hoy forman parte del día a día de nuestros clientes.',
+            eyebrow: 'Proyectos',
+            title: 'Nuestros productos y clientes',
+            subtitle: 'Productos propios y aplicaciones que desarrollamos para nuestros clientes, que hoy forman parte de su día a día.',
             items: [
                 {
-                    name: 'A&D Minimarket',
-                    sector: 'Comercio minorista',
-                    description: 'Aplicación de ventas y control de stock: punto de venta, gestión de inventario y reportes del negocio.',
-                    tags: ['Ventas', 'Stock', 'Reportes']
+                    name: 'Atiendo',
+                    sector: 'Producto propio · Salud y profesionales',
+                    description: 'Sistema de gestión para profesionales independientes: agenda con turnos online, historia clínica, caja, reportes y módulos para cada profesión.',
+                    tags: ['Agenda', 'Historia clínica', 'Caja']
                 },
                 {
-                    name: 'Dra. Cecilia Tarulli',
-                    sector: 'Medicina estética',
-                    description: 'Aplicación a medida para la gestión de un centro de medicina estética.',
-                    tags: ['Salud y estética', 'Gestión']
+                    name: 'Centro',
+                    sector: 'Producto propio · Guía local',
+                    description: 'Guía de comercios y profesionales cerca tuyo: búsqueda por cercanía, pedidos, reservas y turnos online que caen directo en la agenda.',
+                    tags: ['Turnos online', 'Reservas', 'Pedidos']
                 },
                 {
                     name: 'Flick',
-                    sector: 'Productividad',
-                    description: 'Aplicación para el manejo y la trazabilidad de tareas de oficina: asignación, seguimiento y estado de cada tarea.',
+                    sector: 'Producto propio · Productividad',
+                    description: 'Software que desarrollamos para nuestra oficina: manejo y trazabilidad de tareas, con asignación, seguimiento y estado de cada una.',
                     tags: ['Tareas', 'Trazabilidad', 'Equipos']
                 },
                 {
@@ -98,6 +98,18 @@ export const translations = {
                     sector: 'Financiera',
                     description: 'Aplicación para la gestión de cobranzas: seguimiento de cuotas, pagos y saldos de cada cliente.',
                     tags: ['Cobranzas', 'Cuotas', 'Gestión']
+                },
+                {
+                    name: 'Dra. Cecilia Tarulli',
+                    sector: 'Medicina estética',
+                    description: 'Aplicación a medida para la gestión de un centro de medicina estética.',
+                    tags: ['Salud y estética', 'Gestión']
+                },
+                {
+                    name: 'A&D Minimarket',
+                    sector: 'Comercio minorista',
+                    description: 'Aplicación de ventas y control de stock: punto de venta, gestión de inventario y reportes del negocio.',
+                    tags: ['Ventas', 'Stock', 'Reportes']
                 }
             ]
         },
@@ -200,26 +212,26 @@ export const translations = {
             ]
         },
         clients: {
-            eyebrow: 'Clients',
-            title: 'Businesses that trust us',
-            subtitle: 'Some of the applications we built that are now part of our clients’ daily operations.',
+            eyebrow: 'Projects',
+            title: 'Our products and clients',
+            subtitle: 'Our own products and the applications we built for our clients, now part of their daily operations.',
             items: [
                 {
-                    name: 'A&D Minimarket',
-                    sector: 'Retail',
-                    description: 'Sales and inventory app: point of sale, stock management and business reports.',
-                    tags: ['Sales', 'Inventory', 'Reports']
+                    name: 'Atiendo',
+                    sector: 'Own product · Health & professionals',
+                    description: 'Practice management system for independent professionals: online booking calendar, clinical records, cash register, reports and modules for each profession.',
+                    tags: ['Calendar', 'Clinical records', 'Cash register']
                 },
                 {
-                    name: 'Dra. Cecilia Tarulli',
-                    sector: 'Aesthetic medicine',
-                    description: 'Custom management app for an aesthetic medicine clinic.',
-                    tags: ['Health & beauty', 'Management']
+                    name: 'Centro',
+                    sector: 'Own product · Local guide',
+                    description: 'Directory of nearby shops and professionals: proximity search, orders, reservations and online appointments that go straight into the calendar.',
+                    tags: ['Online booking', 'Reservations', 'Orders']
                 },
                 {
                     name: 'Flick',
-                    sector: 'Productivity',
-                    description: 'Office task management and traceability app: assignment, follow-up and status of every task.',
+                    sector: 'Own product · Productivity',
+                    description: 'Software we built for our own office: task management and traceability, with assignment, follow-up and status of every task.',
                     tags: ['Tasks', 'Traceability', 'Teams']
                 },
                 {
@@ -239,6 +251,18 @@ export const translations = {
                     sector: 'Finance',
                     description: 'Collections management app: tracking of installments, payments and balances for each customer.',
                     tags: ['Collections', 'Installments', 'Management']
+                },
+                {
+                    name: 'Dra. Cecilia Tarulli',
+                    sector: 'Aesthetic medicine',
+                    description: 'Custom management app for an aesthetic medicine clinic.',
+                    tags: ['Health & beauty', 'Management']
+                },
+                {
+                    name: 'A&D Minimarket',
+                    sector: 'Retail',
+                    description: 'Sales and inventory app: point of sale, stock management and business reports.',
+                    tags: ['Sales', 'Inventory', 'Reports']
                 }
             ]
         },

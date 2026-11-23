@@ -8,9 +8,20 @@ import flick from '../assets/flick.png';
 import marher from '../assets/marher.png';
 import delta from '../assets/delta.png';
 import omega from '../assets/omega-logo.png';
+import atiendo from '../assets/atiendo.svg';
+import centro from '../assets/centro.svg';
 
-// Mismo orden que translations.clients.items
-const LOGOS = [aydMinimarket, ct, flick, marher, delta, omega];
+// Logo de cada cliente, por nombre (el orden lo define translations.clients.items)
+const LOGOS = {
+    'Atiendo': atiendo,
+    'Centro': centro,
+    'Flick': flick,
+    'Mar-Her Distribuidora': marher,
+    'Fundación Delta': delta,
+    'Omega Equipamientos': omega,
+    'Dra. Cecilia Tarulli': ct,
+    'A&D Minimarket': aydMinimarket
+};
 
 const Clientes = () => {
     const { language } = useLanguage();
@@ -26,10 +37,10 @@ const Clientes = () => {
                 </div>
 
                 <div className="clientes-grid">
-                    {t.clients.items.map((cliente, index) => (
+                    {t.clients.items.map((cliente) => (
                         <article key={cliente.name} className="cliente-card reveal">
                             <div className="cliente-logo">
-                                <img src={LOGOS[index]} alt={cliente.name} loading="lazy" />
+                                <img src={LOGOS[cliente.name]} alt={cliente.name} loading="lazy" />
                             </div>
                             <div className="cliente-info">
                                 <span className="cliente-sector">{cliente.sector}</span>
